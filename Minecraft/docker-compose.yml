@@ -1,0 +1,53 @@
+version: '3.7'
+
+services:
+  backup:
+    image: kaiede/minecraft-bedrock-backup
+    restart: always
+    # Make sure the minecraft images start before the backup
+    depends_on:
+      - "public"
+      # - "private"
+    environment:
+        # Useful for making sure your logs have a proper timestamp
+        TZ: "Australia/Sydney"
+    volumes:
+      # Map your backups folder info /backups
+      - /opt/minecraft/backups:/backups
+      # Map the data folders for both servers
+      - /opt/bedrock/private:/bedrock_private
+      - /opt/bedrock/public:/bedrock_public
+
+  public:
+    image: itzg/minecraft-bedrock-server
+    restart: always
+    container_name: bedrock_public
+    # Expose the mc-server-runner's SSH port to just the backup container
+    expose:
+      - 2222
+    # Make the minecraft server port public
+    ports:
+      - 19132:19132/udp
+    environment:
+      # Set target version
+      VERSION: "LATEST"
+      # Enable SSH
+      ENABLE_SSH: "TRUE"
+      # Server settings
+      EULA: "TRUE"
+      # Timezone
+      TZ: "Australia/Sydney"
+      # Server properties
+      SERVER_NAME: "Onyxx Land"
+      LEVEL_NAME: "mcbedrock@ursula"
+      LEVEL_SEED: "-6779976332610208683"
+      GAMEMODE: "survival"
+      DIFFICULTY: "hard"
+      ONLINE_MODE: "false"
+      PLAYER_IDLE_TIMEOUT: "120"
+      VIEW_DISTANCE: "32"
+      TICK_DISTANCE: "4"
+    volumes:
+      - /opt/bedrock/public:/data
+    stdin_open: true
+    tty: true
