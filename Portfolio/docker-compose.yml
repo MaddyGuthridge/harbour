@@ -20,7 +20,7 @@ services:
         # Forward local machine SSH key to docker
         # Note: this may need changes on MacOS
         # Source: https://stackoverflow.com/a/36648428/6335363
-      - $SSH_AUTH_SOCK:/ssh-agent
+      - ${SSH_AUTH_SOCK:-$XDG_RUNTIME_DIR/ssh-agent.socket}:/ssh-agent
       - "ssh_dir:/home/node/.ssh:rw"
     environment:
       DATA_REPO_PATH: "/data"
