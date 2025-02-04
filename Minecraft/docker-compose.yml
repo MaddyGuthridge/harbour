@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   backup:
     image: kaiede/minecraft-bedrock-backup
@@ -12,11 +10,12 @@ services:
         # Useful for making sure your logs have a proper timestamp
         TZ: "Australia/Sydney"
     volumes:
+      # (Optional) Map a configuration folder separately from the backups
+      - "./config:/config"
       # Map your backups folder info /backups
-      - /opt/minecraft/backups:/backups
-      # Map the data folders for both servers
-      - /opt/bedrock/private:/bedrock_private
-      - /opt/bedrock/public:/bedrock_public
+      - "/mnt/nextcloud-backup/minecraft:/data:rw"
+      # Map the data folders for the server
+      - "/opt/bedrock/public:/bedrock"
 
   public:
     image: itzg/minecraft-bedrock-server
@@ -25,9 +24,10 @@ services:
     # Expose the mc-server-runner's SSH port to just the backup container
     expose:
       - 2222
-    # Make the minecraft server port public
+    # Make the minecraft server ports public
     ports:
-      - 19132:19132/udp
+      - 19132:19132/udp  # Gameplay + LAN discovery
+      - 19133:19133/udp  # Gameplay
     environment:
       # Set target version
       VERSION: "LATEST"
