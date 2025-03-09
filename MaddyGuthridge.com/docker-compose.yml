@@ -19,7 +19,7 @@ services:
     hostname: minifolio
     restart: always
     ports:
-      - 127.0.0.1:5010:3000/tcp
+      - 127.0.0.1:5020:3000/tcp
     volumes:
       - "./data:/data:rw"
       - "./private_data:/private_data:rw"
