@@ -1,0 +1,62 @@
+tunnel: 08c5c9c4-e6c0-4e4b-9735-e164cef8be40
+credentials-file: /root/.cloudflared/08c5c9c4-e6c0-4e4b-9735-e164cef8be40.json
+
+ingress:
+  # MaddyGuthridge.com
+  - hostname: maddyguthridge.com
+    service: http://localhost:5020
+
+  # Minifolio docs
+  - hostname: minifolio.maddyguthridge.com
+    service: http://localhost:5021
+
+  # Blog
+  - hostname: blog.maddyguthridge.com
+    service: http://localhost:5195
+
+  # SSH
+  - hostname: ssh.maddyguthridge.com
+    service: ssh://localhost:22
+  # RDP
+  - hostname: rdp.maddyguthridge.com
+    service: rdp://localhost:3389
+
+  # FirstMate demo
+  - hostname: firstmate.maddyguthridge.com
+    service: http://localhost:7890
+
+  # Bnuuy time
+  - hostname: bnuuy-time.maddyguthridge.com
+    service: http://localhost:7891
+
+  # Joke sites
+  # Is my UUID unique?
+  - hostname: uuid.maddyguthridge.com
+    service: http://localhost:5097
+
+  # Nextcloud
+  - hostname: nextcloud.maddyguthridge.com
+    service: http://localhost:11000
+
+  # Uptime monitor
+  - hostname: uptime.maddyguthridge.com
+    service: http://localhost:6001
+
+  # COMP1010 sites
+  - hostname: are-you-sure.maddyguthridge.com
+    service: http://localhost:8000
+  - hostname: duck-test.maddyguthridge.com
+    service: http://localhost:8001
+  - hostname: 1010-logins.maddyguthridge.com
+    service: http://localhost:8002
+  - hostname: jukebox.maddyguthridge.com
+    service: http://localhost:8003
+  - hostname: restaurants.maddyguthridge.com
+    service: http://localhost:8004
+
+  # Mail auto-configuration -- note this service isn't running most of the time
+  - hostname: autoconfig.maddyguthridge.com
+    service: http://localhost:9000
+
+  # Fall through to a 404
+  - service: http_status:404
