@@ -10,8 +10,12 @@ containers:
       worlds:
         - "/bedrock/worlds/mcbedrock@ursula"
 schedule:
-  # This will perform a backup every day.
-  interval: 1d
+  # Every morning at 1 AM
+  daily: 01:00
+  # When a player logs out
+  onPlayerLogout: true
+  # At most every 3 hours
+  minInterval: 3h
 trim:
   # Keep all backups for the last 7 days
   # Keep at least one backup for the last month

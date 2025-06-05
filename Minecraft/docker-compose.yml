@@ -4,8 +4,8 @@ services:
     restart: always
     # Make sure the minecraft images start before the backup
     depends_on:
-      - "public"
-      # - "private"
+      public:
+        condition: service_healthy
     environment:
         # Useful for making sure your logs have a proper timestamp
         TZ: "Australia/Sydney"
