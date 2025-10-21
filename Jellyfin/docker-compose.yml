@@ -12,15 +12,12 @@ services:
       - ./config:/config
       - ./cache:/cache
       - type: bind
-        source: /mnt/maddyflix/media
+        source: /mnt/maddyflix
         target: /media
-      - type: bind
-        source: /mnt/maddyflix/media-lachlan
-        target: /media-lachlan
     restart: 'unless-stopped'
     # Optional - alternative address used for autodiscovery
     environment:
-      - JELLYFIN_PublishedServerUrl=http://maddyflix.maddyguthridge.com
+      JELLYFIN_PublishedServerUrl: 'internal=http://192.168.1.112:8096, external=https://jellyfin.maddyguthridge.com'
     # Optional - may be necessary for docker healthcheck to pass if running in host network mode
     extra_hosts:
       - 'host.docker.internal:host-gateway'
