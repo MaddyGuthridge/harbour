@@ -1,0 +1,12 @@
+# List of media libraries to scan
+libraries:
+  - name: "Maddy's Movies"
+    staging: "/media/maddy/staging/movies"
+    production: "/media/maddy/movies"
+  - name: "Maddy's Shows"
+    staging: "/media/maddy/staging/shows"
+    production: "/media/maddy/shows"
+handbrake:
+  # Path to the presets directory
+  presets: "/config/presets"
+  threads: 2
