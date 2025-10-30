@@ -10,3 +10,4 @@ handbrake:
   # Path to the presets directory
   presets: "/config/presets"
   threads: 2
+auth: auth.json
