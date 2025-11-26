@@ -12,7 +12,7 @@ services:
       - ./config:/config
       - ./cache:/cache
       - type: bind
-        source: /mnt/maddyflix
+        source: /media/maddyflix
         target: /media
     restart: 'unless-stopped'
     # Optional - alternative address used for autodiscovery
