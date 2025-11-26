@@ -42,9 +42,13 @@ ingress:
   - hostname: maddyflix.maddyguthridge.com
     service: http://localhost:8096
 
-  # Uptime monitor
+  # Monitoring
+  # UptimeKuma
   - hostname: uptime.maddyguthridge.com
     service: http://localhost:6001
+  # Beszel
+  - hostname: beszel.maddyguthridge.com
+    service: http://localhost:8090
 
   # COMP1010 sites
   - hostname: are-you-sure.maddyguthridge.com
