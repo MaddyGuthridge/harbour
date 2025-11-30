@@ -1,11 +1,20 @@
 # List of media libraries to scan
 libraries:
-  - name: "Maddy's Movies"
-    staging: "/media/maddy/staging/movies"
-    production: "/media/maddy/movies"
-  - name: "Maddy's Shows"
-    staging: "/media/maddy/staging/shows"
-    production: "/media/maddy/shows"
+  - name: "1/maddy/movies"
+    staging: "/media/1/maddy/staging/movies"
+    production: "/media/1/maddy/movies"
+  - name: "2/maddy/movies"
+    staging: "/media/2/maddy/staging/movies"
+    production: "/media/2/maddy/movies"
+  - name: "1/maddy/shows"
+    staging: "/media/1/maddy/staging/shows"
+    production: "/media/1/maddy/shows"
+  - name: "2/maddy/shows"
+    staging: "/media/2/maddy/staging/shows"
+    production: "/media/2/maddy/shows"
+  - name: "1/lachlan/shows"
+    staging: "/media/1/lachlan/staging/shows"
+    production: "/media/1/lachlan/shows"
 handbrake:
   # Path to the presets directory
   presets: "/config/presets"
