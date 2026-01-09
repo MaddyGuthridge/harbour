@@ -10,10 +10,6 @@ ingress:
   - hostname: minifolio.maddyguthridge.com
     service: http://localhost:5021
 
-  # Blog
-  - hostname: blog.maddyguthridge.com
-    service: http://localhost:5195
-
   # SSH
   - hostname: ssh.maddyguthridge.com
     service: ssh://localhost:22
@@ -41,6 +37,8 @@ ingress:
   # Jellyfin
   - hostname: maddyflix.maddyguthridge.com
     service: http://localhost:8096
+  - hostname: transcoded.maddyguthridge.com
+    service: http://localhost:5030
 
   # Monitoring
   # UptimeKuma
@@ -65,6 +63,9 @@ ingress:
   # Mail auto-configuration -- note this service isn't running most of the time
   - hostname: autoconfig.maddyguthridge.com
     service: http://localhost:9000
+  # Other content
+  - hostname: olligobber-beta.maddyguthridge.com
+    service: http://localhost:9001
 
   # Fall through to a 404
   - service: http_status:404
