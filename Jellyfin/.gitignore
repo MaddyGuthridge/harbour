@@ -1,3 +1,4 @@
 # Jellyfin data
 cache/
 config/
+config-*/
