@@ -15,6 +15,12 @@ libraries:
   - name: "1/lachlan/shows"
     staging: "/media/1/lachlan/staging/shows"
     production: "/media/1/lachlan/shows"
+  - name: "3/maddy/movies"
+    staging: "/media/3/staging/movies"
+    production: "/media/3/production/movies"
+  - name: "3/maddy/shows"
+    staging: "/media/3/staging/shows"
+    production: "/media/3/production/movies"
 handbrake:
   # Path to the presets directory
   presets: "/config/presets"
