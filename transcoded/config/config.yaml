@@ -20,7 +20,7 @@ libraries:
     production: "/media/3/production/movies"
   - name: "3/maddy/shows"
     staging: "/media/3/staging/shows"
-    production: "/media/3/production/movies"
+    production: "/media/3/production/shows"
 handbrake:
   # Path to the presets directory
   presets: "/config/presets"
