@@ -24,6 +24,8 @@ ingress:
   # Bnuuy time
   - hostname: bnuuy-time.maddyguthridge.com
     service: http://localhost:7891
+  - hostname: bnuuy.date
+    service: http://localhost:7891
 
   # Joke sites
   # Is my UUID unique?
