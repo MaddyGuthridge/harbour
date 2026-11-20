@@ -9,7 +9,7 @@ services:
   minifolio:
     # To build from the local repo, rather than the latest published version:
     # Comment out this line
-    image: maddyguthridge/minifolio
+    image: ghcr.io/maddyguthridge/minifolio
     # And uncomment these lines
     # build:
     #   context: .
